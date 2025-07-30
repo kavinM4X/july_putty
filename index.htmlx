@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real Flame Animation on White</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff; /* changed to white */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .flame-container {
+      width: 150px;
+      height: 200px;
+      position: relative;
+    }
+
+    .flame svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .flame path.outer {
+      fill: #FF6D00;
+      animation: flameMove 1.3s infinite ease-in-out alternate;
+    }
+
+    .flame path.middle {
+      fill: #FF9800;
+      animation: flameMove 1.2s infinite ease-in-out alternate;
+    }
+
+    .flame path.inner {
+      fill: #FFEB3B;
+      animation: flameMove 1.1s infinite ease-in-out alternate;
+    }
+
+    @keyframes flameMove {
+      0% {
+        transform: translateY(0px) scaleX(1) scaleY(1);
+      }
+      50% {
+        transform: translateY(-4px) scaleX(1.02) scaleY(1.05);
+      }
+      100% {
+        transform: translateY(0px) scaleX(1) scaleY(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="flame-container">
+  <div class="flame">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer flame -->
+      <path class="outer" d="M32 2c-6 10-14 16-14 26s6 18 14 18 14-8 14-18-8-16-14-26z"/>
+      <!-- Middle flame -->
+      <path class="middle" d="M32 8c-4 7-10 12-10 20s4 14 10 14 10-6 10-14-6-13-10-20z"/>
+      <!-- Inner flame -->
+      <path class="inner" d="M32 18c-2 3-5 6-5 10s2 7 5 7 5-3 5-7-3-7-5-10z"/>
+    </svg>
+  </div>
+</div>
+
+</body>
+</html>
